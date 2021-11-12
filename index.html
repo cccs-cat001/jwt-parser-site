@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
     <script>
         function parseJwt () {
             var token = document.getElementById("token").value;
@@ -19,28 +22,21 @@
         };
     </script>
     <body>
-        <div>
-            <label for="token">Enter Token:</label><br>
+        <label for="token">Enter Token:</label><br>
+        <div class="centered">
             <textarea onchange="parseJwt" id="token" name="token"></textarea><br>
-            <button id="decode">DECODE</button>
-            <br>
-            <label for="parsed">Parsed Token:</label><br>
+        </div>
+        <br>
+        <div class="centered">
+            <button class="button" id="decode">Decode</button>
+        </div>
+        <br>
+        <label for="parsed">Parsed Token:</label><br>
+        <div class="centered">
             <textarea disabled id="parsed" cols=50 rows=25 name="parsed"></textarea>
         </div>
     </body>
-    <style>
-        html {
-            font-size: large;
-        }
-        textarea {
-            width: 75%;
-            height: 200px;
-            font-size: large;
-        }
-        #parsed {
-            height: auto;
-        }
-    </style>
+
     <script>
         document.getElementById("decode").addEventListener("click", parseJwt);
     </script>
